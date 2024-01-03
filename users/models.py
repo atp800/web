@@ -30,7 +30,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         primary_key=True, 
         default=uuid.uuid4, 
         editable=False)
-    email = models.EmailField(max_length=300)
+    email = models.EmailField(max_length=300, unique=True)
     created_at = models.DateTimeField(auto_now_add=True)
     phone = models.CharField(max_length=20, null=True, blank=True)
     house_no = models.CharField(max_length=50, null=True, blank=True)          # could be name
@@ -41,7 +41,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_subscriber = models.BooleanField(default=False)
     is_newsletter = models.BooleanField(default=False)
     is_deleted = models.BooleanField(default=False) # ask for? if so include option to not specify
-    deleted_at = models.DateTimeField(null=True, blank=True)
+    deleted_at = models.DateTimeField(null=True, blank=True)  # can be used to prema-delete users after 30 days and allow account restoration, or delete all user details except id so orders data table isn't broke, and orders can stillm be linked to a user id
     is_staff = models.BooleanField(default=False)
 
     USERNAME_FIELD = 'email'    
