@@ -1,5 +1,11 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomePage from "../views/HomePage.vue";
+import BlogPage from "../views/BlogPage.vue";
+import PhilosophyPage from "../views/PhilosophyPage.vue";
+import ReviewsPage from "../views/ReviewsPage.vue";
+import SciencePage from "../views/SciencePage.vue";
+import WildlifePage from "../views/WildlifePage.vue";
+import UserSettingsPage from "../views/UserSettingsPage.vue";
 
 const routes = [
   {
@@ -7,7 +13,36 @@ const routes = [
     name: "HomePage",
     component: HomePage,
   },
-  //...other routes
+  {
+    path: "/blog",
+    name: "BlogPage",
+    component: BlogPage,
+  },
+  {
+    path: "/philosophy",
+    name: "PhilosophyPage",
+    component: PhilosophyPage,
+  },
+  {
+    path: "/reviews",
+    name: "ReviewsPage",
+    component: ReviewsPage,
+  },
+  {
+    path: "/science",
+    name: "SciencePage",
+    component: SciencePage,
+  },
+  {
+    path: "/wildlife",
+    name: "WildlifePage",
+    component: WildlifePage,
+  },
+  {
+    path: "/user-settings",
+    name: "UserSettingsPage",
+    component: UserSettingsPage,
+  }
 ];
 
 const router = createRouter({

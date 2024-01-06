@@ -1,8 +1,13 @@
 <template>
-  <nav>
+  <!-- <nav>
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+    <router-link to="/blog">Blog</router-link> |
+    <router-link to="/reviews">Reviews</router-link> |
+    <router-link to="/wildlife">Wildlife</router-link> |
+    <router-link to="/science">Science</router-link> |
+    <router-link to="/philosophy">Philosophy</router-link> |
+    <router-link to="/user-settings">Settings</router-link>
+  </nav> -->
   <router-view/>
 </template>
 
