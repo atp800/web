@@ -4,12 +4,12 @@
 <template>
   <div class="video-background">
     <video playsinline autoplay muted loop>
-      <source src="/videos/lion_video.mp4" type="video/mp4">
+      <source src="/videos/lion_dim_blur_1.mov" type="video/mp4">
     </video>
     <div class="blurred-border"></div>
     <div class="overlay-image"></div>
     <header class="header">
-      <!-- <h1>WildEye</h1> -->
+      <h1>WildEye</h1>
     </header>
     <div class="content">
       <transition-group name="fade" tag="div" class="links-container">
@@ -72,16 +72,16 @@ export default {
 }
 
 
-.video-background::before {
+/* .video-background::before {
   content: "";
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
   background: rgba(0, 0, 0, 0.3);
   z-index: 3;
-}
+} */
 
 
-.video-background::after {
+/* .video-background::after {
   content: "";
   position: absolute;
   top: 0;
@@ -94,7 +94,7 @@ export default {
   background-repeat: no-repeat;
   pointer-events: none;
   z-index: 2;
-}
+} */
 
 /* Adjust border for smaller screens */
 @media (max-width: 800px) {
@@ -103,16 +103,16 @@ export default {
   }
 }
 
-.overlay-image {
+/* .overlay-image {
   background: url('/public/images/splatter_blur_2.png') no-repeat center center; 
-  background-size: cover; /* Adjust as needed */
+  background-size: cover;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 4; /* Make sure this is above the z-index of the video */
-}
+  z-index: 4;
+} */
 
 
 
