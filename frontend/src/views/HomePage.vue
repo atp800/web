@@ -7,8 +7,9 @@
       <source src="/videos/lion_video.mp4" type="video/mp4">
     </video>
     <div class="blurred-border"></div>
+    <div class="overlay-image"></div>
     <header class="header">
-      <h1>WildEye</h1>
+      <!-- <h1>WildEye</h1> -->
     </header>
     <div class="content">
       <transition-group name="fade" tag="div" class="links-container">
@@ -87,7 +88,7 @@ export default {
   right: 0;
   bottom: 0;
   left: 0;
-  background: url('/public/images/border_image.png');
+  background: url('/public/images/border_image_blur.png');
   background-size: 90% 80%;
   background-position: center;
   background-repeat: no-repeat;
@@ -100,6 +101,17 @@ export default {
   .video-background::after {
     background-size: 80% 80%;
   }
+}
+
+.overlay-image {
+  background: url('/public/images/splatter_blur_2.png') no-repeat center center; 
+  background-size: cover; /* Adjust as needed */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 4; /* Make sure this is above the z-index of the video */
 }
 
 
@@ -123,7 +135,7 @@ export default {
   top: 1vh;
   width: 100%;
   text-align: center;
-  z-index: 4;
+  z-index: 5;
   color: white;
   font-size: 4vw;
   font-family: 'Montserrat';
@@ -137,7 +149,7 @@ export default {
 
 .content {
   position: relative;
-  z-index: 4;
+  z-index: 5;
   color: white;
   text-align: center;
   font-size: 3.5vw; /* Responsive font-size */
@@ -169,7 +181,7 @@ export default {
 @keyframes fade-in {
   0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(-20px); /*positive 20 looks cool too*/
   }
   100% {
     opacity: 1;
