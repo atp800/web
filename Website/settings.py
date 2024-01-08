@@ -38,10 +38,26 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'rest_framework',
+    'ckeditor',
+    'ckeditor_uploader',
     'posts.apps.PostsConfig',
     'users.apps.UsersConfig',
     'home.apps.HomeConfig',
 ]
+
+# CKEditor to allow for rich text posts
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_IMAGE_BACKEND = "pillow"
+CKEDITOR_CONFIGS = {
+    "default": {
+        "controls": "Full",
+        "height": 300,
+        "width": "100%",
+        "removePlugins": "stylesheetparser",
+        "extraPlugins": "codesnippet",
+    }
+}
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",

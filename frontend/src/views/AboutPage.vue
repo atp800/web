@@ -1,16 +1,30 @@
 <template>
   <div class="video-background">
     <video playsinline autoplay muted loop>
-      <source src="C:/Users/apana/OneDrive/Documents/Projects/WebsiteProject/frontend/src/assets/lion_video.mp4" type="video/mp4">
+      <source src="/videos/multi_animal_splatter.mov" type="video/mp4">
     </video>
-    <div class="content">
+    <div class="blurred-border"></div>
+    <div class="overlay-image"></div>
+    <header class="header">
       <h1>About Us</h1>
-      <transition-group name="fade" tag="div">
+    </header>
+    <div class="content">
+      <br><br><br><br>
+      <p>We started WildEye to have an excuse to spend <br> 
+        hours looking at cool animals, while helping <br>
+        the environment and hopeullfy making enough from <br>
+        the site to live on.</p>
+      <p>Wildlife documentaries will always be our main focus,<br>
+         but we also write articles, review eco-products <br>
+         and make vlogs about out journey.</p>
+
+         <br>
+      <transition-group name="fade" tag="div" class="links-container">
         <router-link 
           v-for="(link, index) in links" 
           :key="link.name" 
           :to="link.to" 
-          class="link" 
+          class="link"
           :style="{ 'animation-delay': `${index * 0.2}s` }"
         >
           {{ link.name }}
@@ -27,10 +41,9 @@ export default {
   data() {
     return {
       links: [
-        { name: 'Home', to: '/' },
-        { name: 'Articles', to: '/articles' },
-        { name: 'Documentaries', to: '/videos' },
-        { name: 'About', to: '/about' },
+        { name: '<- Home   ', to: '/' },
+        // { name: 'Posts and Reviews', to: '/articles' },
+        // { name: 'Documentaries and Vlogs', to: '/videos' },
       ],
     };
   },
@@ -38,49 +51,125 @@ export default {
 </script>
 
 <style scoped>
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Montserrat&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat:wght@500&family=Montserrat&display=swap');
+
+
 .video-background {
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
   height: 100%;
+  /* background: black; */
   overflow: hidden;
-  background: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .video-background video {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
+  z-index: 1;
+  width: 85%; /* adjust to desired size */
+  /* keep aspect ratio */
   height: auto;
-  z-index: 0;
+  /* Center the video */
+  left: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
+  line-height: 1.5; /* Adjusts the space between lines of text */
+}
+
+
+/* .video-background::before {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 3;
+} */
+
+
+/* .video-background::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url('/public/images/border_image_blur.png');
+  background-size: 90% 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 2;
+} */
+
+/* Adjust border for smaller screens */
+@media (max-width: 800px) {
+  .video-background::after {
+    background-size: 80% 80%;
+  }
+}
+
+
+
+
+.header {
+  position: absolute;
+  margin-bottom: 50vw;
+  width: 100%;
+  text-align: center;
+  z-index: 5;
+  color: white;
+  font-size: 4vw;
+  font-family: 'Architects Daughter';
+}
+
+@media (min-width: 1200px) { 
+  .header {
+    font-size: 48px;
+  }
 }
 
 .content {
   position: relative;
-  z-index: 1;
+  z-index: 5;
   color: white;
   text-align: center;
-  font-size: 2em;
-  margin-top: 2em;
+  font-size: 2vw; /* Responsive font-size */
+  margin-top: 2em;  /* Responsive top-margin */
+  min-height: 900px;
+  font-family: 'Architects Daughter';
+  /* font-family: 'Montserrat';   */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+@media (min-width: 1200px) { 
+  .content {
+    font-size: 42px; /* Adjust as needed */
+  }
 }
 
 .link {
+  display: block;
   animation: fade-in 1s ease both;
   cursor: pointer;
   text-decoration: none;
   color: white;
-  margin-top: 1em;
+  margin-bottom: 4vw; /* Adds space below each link */
+  font-family: 'Architects Daughter';
 }
 
 @keyframes fade-in {
   0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(-20px); /*positive 20 looks cool too*/
   }
   100% {
     opacity: 1;

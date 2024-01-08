@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Montserrat&display=swap');
-
 <template>
   <div class="video-background">
     <video playsinline autoplay muted loop>
@@ -47,6 +44,10 @@ export default {
 </script>
 
 <style scoped>
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Montserrat&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat:wght@500&family=Montserrat&display=swap');
+
 
 .video-background {
   position: relative;
@@ -110,19 +111,18 @@ export default {
 
 .header {
   position: absolute;
-  /*top: 150px;*/
   margin-bottom: 50vw;
   width: 100%;
   text-align: center;
   z-index: 5;
   color: white;
   font-size: 4vw;
-  font-family: 'Montserrat';
+  font-family: 'Architects Daughter';
 }
 
 @media (min-width: 1200px) { 
   .header {
-    font-size: 48px; /* Adjust as needed */
+    font-size: 48px;
   }
 }
 
@@ -134,7 +134,8 @@ export default {
   font-size: 3.5vw; /* Responsive font-size */
   margin-top: 2em;  /* Responsive top-margin */
   min-height: 900px;
-  font-family: 'Montserrat';  
+  font-family: 'Architects Daughter';
+  /* font-family: 'Montserrat';   */
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -1,9 +1,12 @@
 from django.shortcuts import render
+from rest_framework import generics
 from .models import Post
+from .serializers import PostSerializer
 
-def posts(request):             ## Needed?? MIght just do same thing as post_detail
-    return render(request, 'posts/post.html')
 
+class PostList(generics.ListAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
 
 
 def blog_posts(request):

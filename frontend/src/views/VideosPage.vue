@@ -34,8 +34,8 @@ export default {
   data() {
     return {
       links: [
+        { name: 'Home', to: '/' },
         { name: 'Posts and Reviews', to: '/articles' },
-        { name: 'Documentaries and Vlogs', to: '/videos' },
         { name: 'About', to: '/about' },
         // { name: 'Science', to: '/science' },
         // { name: 'Philosophy', to: '/philosophy' },
