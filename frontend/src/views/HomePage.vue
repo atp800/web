@@ -4,7 +4,7 @@
 <template>
   <div class="video-background">
     <video playsinline autoplay muted loop>
-      <source src="/videos/lion_dim_blur_1.mov" type="video/mp4">
+      <source src="/videos/multi_animal_splatter.mov" type="video/mp4">
     </video>
     <div class="blurred-border"></div>
     <div class="overlay-image"></div>
@@ -34,12 +34,12 @@ export default {
   data() {
     return {
       links: [
-        { name: 'Blog', to: '/blog' },
-        { name: 'Reviews', to: '/reviews' },
-        { name: 'Wildlife', to: '/wildlife' },
-        { name: 'Science', to: '/science' },
-        { name: 'Philosophy', to: '/philosophy' },
-        { name: 'Settings', to: '/settings' },
+        { name: 'Posts and Reviews', to: '/articles' },
+        { name: 'Documentaries and Vlogs', to: '/videos' },
+        { name: 'About', to: '/about' },
+        // { name: 'Science', to: '/science' },
+        // { name: 'Philosophy', to: '/philosophy' },
+        // { name: 'Settings', to: '/settings' },
       ],
     };
   },
@@ -47,13 +47,15 @@ export default {
 </script>
 
 <style scoped>
+
 .video-background {
   position: relative;
   width: 100%;
   height: 100%;
-  background: black;
+  /* background: black; */
   overflow: hidden;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -103,36 +105,13 @@ export default {
   }
 }
 
-/* .overlay-image {
-  background: url('/public/images/splatter_blur_2.png') no-repeat center center; 
-  background-size: cover;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 4;
-} */
-
-
-
-/* .blurred-border {
-  position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
-  border-style: solid;
-  border-width: 50000vw;
-  border-image-source: url('/public/images/border_image.png');
-  border-image-slice: 200%;
-  border-image-width: 50000vw;
-  border-image-outset: 0;
-  border-image-repeat: stretch;
-} */
 
 
 
 .header {
   position: absolute;
-  top: 1vh;
+  /*top: 150px;*/
+  margin-bottom: 50vw;
   width: 100%;
   text-align: center;
   z-index: 5;
@@ -154,6 +133,7 @@ export default {
   text-align: center;
   font-size: 3.5vw; /* Responsive font-size */
   margin-top: 2em;  /* Responsive top-margin */
+  min-height: 900px;
   font-family: 'Montserrat';  
   display: flex;
   flex-direction: column;
@@ -174,7 +154,7 @@ export default {
   cursor: pointer;
   text-decoration: none;
   color: white;
-  margin-bottom: 4vh; /* Adds space below each link */
+  margin-bottom: 4vw; /* Adds space below each link */
   font-family: 'Architects Daughter';
 }
 

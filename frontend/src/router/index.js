@@ -1,11 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomePage from "../views/HomePage.vue";
-import BlogPage from "../views/BlogPage.vue";
-import PhilosophyPage from "../views/PhilosophyPage.vue";
-import ReviewsPage from "../views/ReviewsPage.vue";
-import SciencePage from "../views/SciencePage.vue";
-import WildlifePage from "../views/WildlifePage.vue";
-import UserSettingsPage from "../views/UserSettingsPage.vue";
+import ArticlesPage from "../views/ArticlesPage.vue";
+import PhilosophyPage from "../views/VideosPage.vue";
+import ReviewsPage from "../views/AboutPage.vue";
 
 const routes = [
   {
@@ -14,35 +11,35 @@ const routes = [
     component: HomePage,
   },
   {
-    path: "/blog",
-    name: "BlogPage",
-    component: BlogPage,
+    path: "/articles",
+    name: "ArticlesPage",
+    component: ArticlesPage,
   },
   {
-    path: "/philosophy",
-    name: "PhilosophyPage",
+    path: "/videos",
+    name: "VideosPage",
     component: PhilosophyPage,
   },
   {
-    path: "/reviews",
-    name: "ReviewsPage",
+    path: "/about",
+    name: "AboutPage",
     component: ReviewsPage,
   },
-  {
-    path: "/science",
-    name: "SciencePage",
-    component: SciencePage,
-  },
-  {
-    path: "/wildlife",
-    name: "WildlifePage",
-    component: WildlifePage,
-  },
-  {
-    path: "/user-settings",
-    name: "UserSettingsPage",
-    component: UserSettingsPage,
-  }
+  // {
+  //   path: "/science",
+  //   name: "SciencePage",
+  //   component: SciencePage,
+  // },
+  // {
+  //   path: "/wildlife",
+  //   name: "WildlifePage",
+  //   component: WildlifePage,
+  // },
+  // {
+  //   path: "/user-settings",
+  //   name: "UserSettingsPage",
+  //   component: UserSettingsPage,
+  // }
 ];
 
 const router = createRouter({
