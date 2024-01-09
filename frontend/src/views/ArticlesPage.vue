@@ -51,11 +51,28 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat:wght@500&family=Montserrat&family=Neucha&display=swap');
 
 
+
+h1 {
+  font-family: 'Caveat';  /* Use 'Architects Daughter' font */
+  color: white;  /* Set text color to white */
+  font-size: 7vw;  /* Increase size */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), 0 0 0.4em rgba(211, 211, 211, 0.2), 0 0 0.1em rgba(211, 211, 211, 0.2); /* Added for faux inner shadow */
+  
+}
+
+
+body {
+  background-image: url('~@/assets/leaf-background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
 .grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
 
 .grid-item {
   width: calc(100% / 3 - 10px); /* calculates the width for 3 items per row */
@@ -70,10 +87,11 @@ export default {
 
 .grid-item img {
   width: 80%;
-  height: auto;
+  height: 80%;            /* Set height to match width */
   display: block;
-  position: relative;  /* New line */
-  border-radius: 15px;   
+  object-fit: cover;       /* This line scales the image while maintaining the aspect ratio */
+  position: relative;
+  border-radius: 15px;
   box-shadow: inset 0 0 10px #000000;
 }
 
@@ -85,7 +103,7 @@ export default {
   color: white;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5), 0 0 0.4em rgba(211, 211, 211, 0.2), 0 0 0.1em rgba(211, 211, 211, 0.2); /* Added for faux inner shadow */
   font-family: 'Montserrat';
-  font-size: 4vw;
+  font-size: 3.3vw;
   font-weight: bold;
   text-align: center;
 }
