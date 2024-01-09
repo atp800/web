@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     'rest_framework',
+    'corsheaders',
     'ckeditor',
     'ckeditor_uploader',
     'posts.apps.PostsConfig',
@@ -59,17 +60,29 @@ CKEDITOR_CONFIGS = {
     }
 }
 
+# Where requests are allowed to come from (other sources will be blocked)
+CORS_ALLOWED_ORIGINS = [    
+    'http://localhost:8080',  # for development
+    'http://localhost:8000',  # for development
+    # 'https://www.yourwebsite.com',  # for production
+    # add more origins if needed
+]
+
 MIDDLEWARE = [
-    "django.middleware.security.SecurityMiddleware",
-    "django.contrib.sessions.middleware.SessionMiddleware",
-    "django.middleware.common.CommonMiddleware",
-    "django.middleware.csrf.CsrfViewMiddleware",
-    "django.contrib.auth.middleware.AuthenticationMiddleware",
-    "django.contrib.messages.middleware.MessageMiddleware",
-    "django.middleware.clickjacking.XFrameOptionsMiddleware",
+   'corsheaders.middleware.CorsMiddleware',  # CorsMiddleware should be the first in the list
+   'django.middleware.security.SecurityMiddleware',
+   'django.contrib.sessions.middleware.SessionMiddleware',
+   'django.middleware.common.CommonMiddleware',
+   'django.middleware.csrf.CsrfViewMiddleware',
+   'django.contrib.auth.middleware.AuthenticationMiddleware',
+   'django.contrib.messages.middleware.MessageMiddleware',
+   'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
 ROOT_URLCONF = "Website.urls"
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'frontend', 'public', 'images', 'Post Thumbnails')
+MEDIA_URL = '/media/'
 
 TEMPLATES = [
     {
