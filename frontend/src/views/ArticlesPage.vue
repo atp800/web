@@ -19,12 +19,10 @@
              @mouseover="hoveredPost = post.post_id" 
              @mouseleave="hoveredPost = null"
              :class="hoveredPost === post.post_id ? 'fade' : ''">
-        <div class="centered-text"
-             v-if="hoveredPost !== post.post_id">{{ post.title }}</div>
-        <div class="centered-text"
-             :key="`description-${post.post_id}`"
-             v-if="hoveredPost === post.post_id"
-             :style="{'font-size': isHoveredPost(post.post_id) ? '2vw' : '4vw'}">{{ shortDescription(post.description) }}</div>
+             <transition-group name="fade" tag="div">
+        <div class="centered-text" v-if="hoveredPost !== post.post_id">{{ post.title }}</div>
+        <div class="centered-text" :key="`description-${post.post_id}`" v-if="hoveredPost === post.post_id" :style="{'font-size': isHoveredPost(post.post_id) ? '2vw' : '4vw'}">{{ shortDescription(post.description) }}</div>
+              </transition-group>
       </router-link>
     </div>
   </div>
@@ -101,6 +99,12 @@ export default {
 .home-button svg {
   width: 2rem;  /* adjust size as needed */
   height: 2rem;
+  opacity: 1;    /* Set original opacity */
+  transition: opacity 0.15s ease-in-out; /* Smooth transition */
+}
+
+.home-button:hover svg {
+  opacity: 0.5;    /* Adjust to desired opacity during hover */
 }
 
 h1 {
@@ -146,11 +150,12 @@ body {
   box-shadow: inset 0 0 10px #000000;
   aspect-ratio: 1 / 1; /* Add aspect-ratio to maintain square aspect */
   overflow: hidden; /* Make sure the image doesn't exceed the grid item */
+  opacity: 1;  /* Set the initial opacity */
+  transition: opacity 0.22s ease-in-out;  /* Adjust timing as needed */
 }
 
 .grid-item img.fade {
   opacity: 0.5;
-  transition: opacity 0.2s ease-in-out;  /* adjust timing as needed */
 }
 
 .centered-text {
@@ -164,7 +169,19 @@ body {
   font-size: clamp(1vw, 4vw, 150px);
   font-weight: bold;
   text-align: center;
-  transition: font-size 0.1s ease-in-out;
+  transition: font-size 0.22s ease-in-out;
   pointer-events: none; /* Added */
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.22s;
+}
+
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-to, .fade-leave-from {
+  opacity: 1;
 }
 </style>
