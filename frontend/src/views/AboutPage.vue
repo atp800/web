@@ -123,7 +123,7 @@ export default {
   text-align: center;
   z-index: 5;
   color: white;
-  font-size: 4vw;
+  font-size: clamp(1.5rem, 4vw, 100px);
   font-family: 'Architects Daughter';
 }
 
@@ -138,11 +138,10 @@ export default {
   z-index: 5;
   color: white;
   text-align: center;
-  font-size: 2vw; /* Responsive font-size */
+  font-size: clamp(1.5rem, 5.5vw, 80px); 
   margin-top: 2em;  /* Responsive top-margin */
   min-height: 900px;
-  font-family: 'Architects Daughter';
-  /* font-family: 'Montserrat';   */
+  font-family: 'Nanum Pen Script';
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -163,7 +162,7 @@ export default {
   text-decoration: none;
   color: white;
   margin-bottom: 4vw; /* Adds space below each link */
-  font-family: 'Architects Daughter';
+  font-family: 'Nanum Pen Script';
 }
 
 @keyframes fade-in {

@@ -24,7 +24,7 @@
         <div class="centered-text"
              :key="`description-${post.post_id}`"
              v-if="hoveredPost === post.post_id"
-             :style="{'font-size': isHoveredPost(post.post_id) ? '2vw' : '3.7vw'}">{{ shortDescription(post.description) }}</div>
+             :style="{'font-size': isHoveredPost(post.post_id) ? '2vw' : '4vw'}">{{ shortDescription(post.description) }}</div>
       </router-link>
     </div>
   </div>
@@ -104,9 +104,9 @@ export default {
 }
 
 h1 {
-  font-family: 'Caveat';  /* Use 'Architects Daughter' font */
+  font-family: 'Architects Daughter';  /* Use 'Architects Daughter' font */
   color: white;  /* Set text color to white */
-  font-size: 7vw;  /* Increase size */
+  font-size: clamp(1.5rem, 7vw, 100px);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), 0 0 0.4em rgba(211, 211, 211, 0.2), 0 0 0.1em rgba(211, 211, 211, 0.2); /* Added for faux inner shadow */
   
 }
@@ -161,7 +161,7 @@ body {
   color: white;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5), 0 0 0.4em rgba(211, 211, 211, 0.2), 0 0 0.1em rgba(211, 211, 211, 0.2); /* Added for faux inner shadow */
   font-family: 'Nanum Pen Script';
-  font-size: 3.7vw;
+  font-size: clamp(1vw, 4vw, 150px);
   font-weight: bold;
   text-align: center;
   transition: font-size 0.1s ease-in-out;

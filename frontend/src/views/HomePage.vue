@@ -44,9 +44,7 @@ export default {
 </script>
 
 <style scoped>
-/* @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Montserrat&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat:wght@500&family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat:wght@500&family=Montserrat&family=Nanum+Pen+Script&family=Neucha&display=swap');
 
 
 .video-background {
@@ -116,26 +114,25 @@ export default {
   text-align: center;
   z-index: 5;
   color: white;
-  font-size: 4vw;
+  font-size: clamp(1.5rem, 4vw, 100px);
   font-family: 'Architects Daughter';
 }
 
-@media (min-width: 1200px) { 
+/* @media (min-width: 1200px) { 
   .header {
     font-size: 48px;
   }
-}
+} */
 
 .content {
   position: relative;
   z-index: 5;
   color: white;
   text-align: center;
-  font-size: 3.5vw; /* Responsive font-size */
+  font-size: clamp(1.5rem, 5.5vw, 80px); 
   margin-top: 2em;  /* Responsive top-margin */
   min-height: 900px;
-  font-family: 'Architects Daughter';
-  /* font-family: 'Montserrat';   */
+  font-family: 'Nanum Pen Script';
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -143,11 +140,11 @@ export default {
   height: 100vh;
 }
 
-@media (min-width: 1200px) { 
+/* @media (min-width: 1200px) { 
   .content {
-    font-size: 42px; /* Adjust as needed */
+    font-size: 42px;
   }
-}
+} */
 
 .link {
   display: block;
@@ -156,7 +153,7 @@ export default {
   text-decoration: none;
   color: white;
   margin-bottom: 4vw; /* Adds space below each link */
-  font-family: 'Architects Daughter';
+  font-family: 'Nanum Pen Script';
 }
 
 @keyframes fade-in {

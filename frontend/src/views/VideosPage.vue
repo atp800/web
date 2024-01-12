@@ -110,14 +110,13 @@ export default {
 
 .header {
   position: absolute;
-  /*top: 150px;*/
   margin-bottom: 50vw;
   width: 100%;
   text-align: center;
   z-index: 5;
   color: white;
-  font-size: 4vw;
-  font-family: 'Montserrat';
+  font-size: clamp(1.5rem, 4vw, 100px);
+  font-family: 'Architects Daughter';
 }
 
 @media (min-width: 1200px) { 
@@ -131,10 +130,10 @@ export default {
   z-index: 5;
   color: white;
   text-align: center;
-  font-size: 3.5vw; /* Responsive font-size */
+  font-size: clamp(1.5rem, 5.5vw, 80px); 
   margin-top: 2em;  /* Responsive top-margin */
   min-height: 900px;
-  font-family: 'Montserrat';  
+  font-family: 'Nanum Pen Script';
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -155,7 +154,7 @@ export default {
   text-decoration: none;
   color: white;
   margin-bottom: 4vw; /* Adds space below each link */
-  font-family: 'Architects Daughter';
+  font-family: 'Nanum Pen Script';
 }
 
 @keyframes fade-in {
