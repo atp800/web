@@ -108,8 +108,8 @@ export default {
 }
 
 h1 {
-  font-family: 'Architects Daughter';  /* Use 'Architects Daughter' font */
-  color: white;  /* Set text color to white */
+  font-family: 'Architects Daughter';
+  color: white;
   font-size: clamp(1.5rem, 7vw, 100px);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), 0 0 0.4em rgba(211, 211, 211, 0.2), 0 0 0.1em rgba(211, 211, 211, 0.2); /* Added for faux inner shadow */
   

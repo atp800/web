@@ -1,5 +1,13 @@
 <template>
   <div class="video-background">
+    <button @click="goToHome" class="home-button">
+      <!-- SVG Icon for Home button -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2h-14a2 2 0 0 1-2-2z"></path>
+        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+      </svg>
+    </button>
+
     <video playsinline autoplay muted loop>
       <source src="/videos/multi_animal_splatter.mov" type="video/mp4">
     </video>
@@ -9,7 +17,6 @@
       <h1>About Us</h1>
     </header>
     <div class="content">
-      <br><br><br><br>
       <p>We started WildEye to have an excuse to spend <br> 
         hours looking at cool animals, while helping <br>
         the environment and hopeullfy making enough from <br>
@@ -18,7 +25,6 @@
          but we also write articles, review eco-products <br>
          and make vlogs about out journey.</p>
 
-         <br>
       <transition-group name="fade" tag="div" class="links-container">
         <router-link 
           v-for="(link, index) in links" 
@@ -37,26 +43,20 @@
 <script>
 export default {
   name: 'AboutPage',
-
-  data() {
-    return {
-      links: [
-        { name: '<- Home   ', to: '/' },
-        // { name: 'Posts and Reviews', to: '/articles' },
-        // { name: 'Documentaries and Vlogs', to: '/videos' },
-      ],
-    };
-  },
+  methods: {
+    goToHome() {
+      this.$router.push('/');
+    }
+  }
 };
 </script>
 
 <style scoped>
-/* @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Montserrat&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat:wght@500&family=Montserrat&display=swap');
 
 
 .video-background {
+  padding-top: 9em; 
   position: relative;
   width: 100%;
   height: 100%;
@@ -69,6 +69,7 @@ export default {
 }
 
 .video-background video {
+  padding-top: 5em; 
   position: absolute;
   z-index: 1;
   width: 85%; /* adjust to desired size */
@@ -114,11 +115,33 @@ export default {
 }
 
 
+.home-button {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white; /* adjust to your desired color */
+  z-index: 10; /* add this line */
+}
+
+.home-button svg {
+  width: 2rem;  /* adjust size as needed */
+  height: 2rem;
+  opacity: 1;    /* Set original opacity */
+  transition: opacity 0.15s ease-in-out; /* Smooth transition */
+}
+
+.home-button:hover svg {
+  opacity: 0.5;    /* Adjust to desired opacity during hover */
+}
+
 
 
 .header {
   position: absolute;
-  margin-bottom: 50vw;
+  margin-bottom: 53vw;
   width: 100%;
   text-align: center;
   z-index: 5;
@@ -139,7 +162,7 @@ export default {
   color: white;
   text-align: center;
   font-size: clamp(0.2rem, 3vw, 80px); 
-  margin-top: 1em;  /* Responsive top-margin */
+  margin-top: -2em; 
   min-height: 900px;
   font-family: 'Nanum Pen Script';
   display: flex;
