@@ -19,7 +19,7 @@
     <div class="content">
       <p>We started WildEye to have an excuse to spend <br> 
         hours looking at cool animals, while helping <br>
-        the environment and hopeullfy making enough from <br>
+        the environment and hopefully making enough from <br>
         the site to live on.</p>
       <p>Wildlife documentaries will always be our main focus,<br>
          but we also write articles, review eco-products <br>
@@ -122,7 +122,7 @@ export default {
   background: none;
   border: none;
   cursor: pointer;
-  color: white; /* adjust to your desired color */
+  color: #fbf7f5; /* adjust to your desired color */
   z-index: 10; /* add this line */
 }
 
@@ -145,7 +145,7 @@ export default {
   width: 100%;
   text-align: center;
   z-index: 5;
-  color: white;
+  color: #fbf7f5;
   font-size: clamp(1.5rem, 4vw, 100px);
   font-family: 'Architects Daughter';
 }
@@ -159,7 +159,7 @@ export default {
 .content {
   position: relative;
   z-index: 5;
-  color: white;
+  color: #fbf7f5;
   text-align: center;
   font-size: clamp(0.2rem, 3vw, 80px); 
   margin-top: -2em; 
@@ -183,7 +183,7 @@ export default {
   animation: fade-in 1s ease both;
   cursor: pointer;
   text-decoration: none;
-  color: white;
+  color: #fbf7f5;
   margin-bottom: 4vw; /* Adds space below each link */
   font-family: 'Nanum Pen Script';
 }

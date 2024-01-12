@@ -113,7 +113,7 @@ export default {
   width: 100%;
   text-align: center;
   z-index: 5;
-  color: white;
+  color: #fbf7f5;
   font-size: clamp(1.5rem, 4vw, 100px);
   font-family: 'Architects Daughter';
 }
@@ -127,7 +127,7 @@ export default {
 .content {
   position: relative;
   z-index: 5;
-  color: white;
+  color: #fbf7f5;
   text-align: center;
   font-size: clamp(1.5rem, 5.5vw, 80px); 
   margin-top: 2em;  /* Responsive top-margin */
@@ -151,7 +151,7 @@ export default {
   animation: fade-in 1s ease both;
   cursor: pointer;
   text-decoration: none;
-  color: white;
+  color: #fbf7f5;
   margin-bottom: 4vw; /* Adds space below each link */
   font-family: 'Nanum Pen Script';
 }
