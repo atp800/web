@@ -119,11 +119,11 @@ export default {
   font-family: 'Architects Daughter';
 }
 
-@media (min-width: 1200px) { 
+/* @media (min-width: 1200px) { 
   .header {
-    font-size: 48px; /* Adjust as needed */
+    font-size: 48px; 
   }
-}
+} */
 
 .content {
   position: relative;
@@ -141,11 +141,11 @@ export default {
   height: 100vh;
 }
 
-@media (min-width: 1200px) { 
+/* @media (min-width: 1200px) { 
   .content {
-    font-size: 42px; /* Adjust as needed */
+    font-size: 42px; 
   }
-}
+} */
 
 .link {
   display: block;

@@ -126,20 +126,20 @@ export default {
   font-size: clamp(1.5rem, 4vw, 100px);
   font-family: 'Architects Daughter';
 }
-
+/* 
 @media (min-width: 1200px) { 
   .header {
     font-size: 48px;
   }
-}
+} */
 
 .content {
   position: relative;
   z-index: 5;
   color: white;
   text-align: center;
-  font-size: clamp(1.5rem, 5.5vw, 80px); 
-  margin-top: 2em;  /* Responsive top-margin */
+  font-size: clamp(0.2rem, 3vw, 80px); 
+  margin-top: 1em;  /* Responsive top-margin */
   min-height: 900px;
   font-family: 'Nanum Pen Script';
   display: flex;
@@ -149,11 +149,11 @@ export default {
   height: 100vh;
 }
 
-@media (min-width: 1200px) { 
+/* @media (min-width: 1200px) { 
   .content {
-    font-size: 42px; /* Adjust as needed */
+    font-size: 42px; 
   }
-}
+} */
 
 .link {
   display: block;
