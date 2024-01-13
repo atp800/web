@@ -24,10 +24,12 @@ urlpatterns = [
     path('users/', include('users.urls')),
     path('articles/', include('posts.urls')),
     # path('ckeditor/', include('ckeditor_uploader.urls')),
+    path("ckeditor5/", include('django_ckeditor_5.urls')),
     path('', include('home.urls')),
-] 
+]  #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)   # do i need this??
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    # urlpatterns+=static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)   # do i need this??
 
 
