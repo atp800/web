@@ -9,5 +9,6 @@ urlpatterns = [
     path('science/', views.science_posts, name='science_posts'),
     path('wildlife/', views.wildlife_posts, name='wildlife_posts'),
     path('', PostList.as_view(), name='post_list'),
-    path('<str:category>/<int:id>/', views.post_detail, name='post_detail'),
+    path('<str:slug>/', views.post_detail, name='post_detail'),
+    # path('<str:category>/<int:id>/', views.post_detail, name='post_detail'),
 ]

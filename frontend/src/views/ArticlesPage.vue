@@ -11,8 +11,8 @@
     <h1>Articles</h1>
     <div class="grid">
       <router-link v-for="post in posts" 
-                   :key="post.post_id"
-                   :to="`/post/${post.post_id}`" 
+                   :key="post.slug"
+                   :to="`/articles/${post.slug}`" 
                    class="grid-item">
         <img :src="post.image" 
              :alt="post.title"
@@ -56,7 +56,7 @@ export default {
   },
   
   created() {
-    axios.get('http://localhost:8000/posts/')
+    axios.get('http://localhost:8000/articles/')
       .then(response => {
         this.posts = response.data;
 

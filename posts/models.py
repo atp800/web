@@ -1,5 +1,5 @@
 from django.db import models
-from ckeditor_uploader.fields import RichTextUploadingField
+# from ckeditor_uploader.fields import RichTextUploadingField
 
 STATUS_CHOICES = (
     ('DRAFT', 'Draft'),
@@ -13,7 +13,7 @@ class Post(models.Model):
     slug = models.CharField(max_length=100)
     image = models.ImageField(upload_to='', null=True, blank=True)
     description = models.TextField(null=True, blank=True)
-    content = RichTextUploadingField(blank=True, null=True)
+    content = models.TextField(blank=True, null=True)#RichTextUploadingField(blank=True, null=True)
     section = models.CharField(max_length=50, null=True, blank=True)
     topic = models.CharField(max_length=200, null=True, blank=True)
     tags = models.CharField(max_length=300, null=True, blank=True)

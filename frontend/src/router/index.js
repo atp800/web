@@ -25,6 +25,22 @@ const routes = [
     name: "AboutPage",
     component: ReviewsPage,
   },
+  {
+    path: '/articles/:slug', // use slug instead of id
+    name: 'PostPage',
+    component: () => import('@/views/PostPage.vue')
+  },
+
+];
+
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
+  routes,
+});
+
+export default router;
+
+
   // {
   //   path: "/science",
   //   name: "SciencePage",
@@ -40,17 +56,6 @@ const routes = [
   //   name: "UserSettingsPage",
   //   component: UserSettingsPage,
   // }
-];
-
-const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes,
-});
-
-export default router;
-
-
-
 
 
 

@@ -2,11 +2,27 @@ from django.shortcuts import render
 from rest_framework import generics
 from .models import Post
 from .serializers import PostSerializer
+from django.shortcuts import get_object_or_404
+from django.http import JsonResponse
 
 
 class PostList(generics.ListAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+
+
+def post_detail(request, slug):
+    post = get_object_or_404(Post, slug=slug)
+    post_data = {
+        "title": post.title,
+        "content": post.content,
+        "image": post.image.url,
+        "author": post.author,
+        "section":post.section,
+        "published": post.published_at,
+        "updated": post.updated_at
+    }
+    return JsonResponse(post_data)
 
 
 def blog_posts(request):
@@ -27,8 +43,4 @@ def science_posts(request):
 
 def wildlife_posts(request):
     # Fetch wildlife posts and render them using wildlife template
-    pass
-
-def post_detail(request, category, id):         ## Allows individual posts to be directly requested and displayed
-    # Fetch the post by id and render it using the appropriate template based on category
     pass

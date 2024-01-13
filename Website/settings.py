@@ -40,25 +40,25 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'rest_framework',
     'corsheaders',
-    'ckeditor',
-    'ckeditor_uploader',
+    # 'ckeditor',
+    # 'ckeditor_uploader',
     'posts.apps.PostsConfig',
     'users.apps.UsersConfig',
     'home.apps.HomeConfig',
 ]
 
 # CKEditor to allow for rich text posts
-CKEDITOR_UPLOAD_PATH = "uploads/"
-CKEDITOR_IMAGE_BACKEND = "pillow"
-CKEDITOR_CONFIGS = {
-    "default": {
-        "controls": "Full",
-        "height": 300,
-        "width": "100%",
-        "removePlugins": "stylesheetparser",
-        "extraPlugins": "codesnippet",
-    }
-}
+# CKEDITOR_UPLOAD_PATH = "uploads/"
+# CKEDITOR_IMAGE_BACKEND = "pillow"
+# CKEDITOR_CONFIGS = {
+#     "default": {
+#         "controls": "Full",
+#         "height": 300,
+#         "width": "100%",
+#         "removePlugins": "stylesheetparser",
+#         "extraPlugins": "codesnippet",
+#     }
+# }
 
 # Where requests are allowed to come from (other sources will be blocked)
 CORS_ALLOWED_ORIGINS = [    
@@ -87,7 +87,7 @@ MEDIA_URL = '/media/'
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [os.path.join(BASE_DIR, 'frontend/dist')],
+        "DIRS": [os.path.join(BASE_DIR, 'frontend/dist'),],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -136,7 +136,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "en-uk"
 
 TIME_ZONE = "UTC"
 
@@ -148,7 +148,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -159,4 +160,5 @@ AUTH_USER_MODEL = 'users.User'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'frontend/dist/static'),
+    os.path.join(BASE_DIR, 'static'),
 ]
