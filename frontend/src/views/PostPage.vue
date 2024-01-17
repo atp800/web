@@ -32,8 +32,28 @@
 
 
 <style scoped>
+
+.post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 5%;  /* Adjust to your preference */
+  padding-right: 5%; /* Adjust to your preference */
+}
+.post h1 {
+  padding-top: 40px;
+  padding-bottom: 20px;
+  color: #fbf7f5;  /* White color */
+}
+
+.post img {
+  max-width: 70%;
+}
+
 .post-content {
+  padding-top: 40px;
   color: #fbf7f5;  /* Off-white color */
-  text-align: left;
+  width: 80%;
+  /* text-align: left; */
 }
 </style>

@@ -8,7 +8,9 @@
       </svg>
     </button>
 
-    <h1>Articles</h1>
+    <div class="header-container">
+      <h1>Articles</h1>
+    </div>
     <div class="grid">
       <router-link v-for="post in posts" 
                    :key="post.slug"
@@ -85,6 +87,13 @@ export default {
 <style scoped>
 
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat:wght@500&family=Montserrat&family=Nanum+Pen+Script&family=Neucha&display=swap');
+
+
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .home-button {
   position: absolute;

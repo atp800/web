@@ -1,3 +1,6 @@
+<!-- Website personal GPT 4:
+https://chat.team-gpt.com/semetrical/657b2101319bf30ae0b6dd74 -->
+
 <template>
   <div class="video-background">
     <video playsinline autoplay muted loop>
