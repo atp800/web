@@ -55,5 +55,9 @@
   color: #fbf7f5;  /* Off-white color */
   width: 80%;
   /* text-align: left; */
+
+  /* DELETE width:6.109in; FROM THE DIV STYLE LINES 
+  AT THE TOP OF THE HTML CODE OF EACH ARTICLE IN CKEDITOR
+  TO ALLOW TEXT OVERFLOW */
 }
 </style>
