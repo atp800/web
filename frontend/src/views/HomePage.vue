@@ -1,56 +1,25 @@
 <template>
-  <div>
+  <div class="homepage">
     
+    <!-- Static Image Container -->
+    <div class="image-container">
+      <img src="/images/Homepage1.png" alt="Background" class="static-image">
+    </div>
     
-
-     <!-- Parallax Container for Layer 1 (background) -->
-    <div class="parallax-container">
-      <Parallaxy :speed="20">
-        <img src="/images/Background.png" alt="Background" class="parallax-image">
-      </Parallaxy>
-    </div>
-
-    <!-- Parallax Container for Layer 2 (midground) -->
-    <div class="parallax-container">
-      <Parallaxy :speed="50">
-        <img src="/images/Midground.png" alt="Midground" class="parallax-image">
-      </Parallaxy>
-    </div>
-
-    <!-- Title Layer -->
-    <div style="position: relative; z-index: 50; text-align: center; font-size: 10em; margin-top: 30px;">
-      WildEye
-    </div>
-
-    <!-- Parallax Container for Layer 3 (background) -->
-    <div class="parallax-container">
-      <Parallaxy :speed="90">
-        <img src="/images/Background.png" alt="Background" class="parallax-image">
-      </Parallaxy>
-    </div>
-
-
-    <!-- Content -->
-    <section>
-      <!-- Your content here -->
-    </section>
-
-
-
     <!-- Navigation Menu -->
-    <div id="nav-menu" style="position: absolute; top: 0; right: 0; z-index: 100;">
-      <ul style="list-style-type: none; margin: 0; padding: 10px;">
-        <li v-for="link in links" :key="link.name" style="display: inline; margin-right: 10px;">
+    <div id="nav-menu">
+      <ul>
+        <li v-for="link in links" :key="link.name">
           <router-link :to="link.to">{{ link.name }}</router-link>
         </li>
       </ul>
     </div>
+
   </div>
 </template>
 
-<script setup>
-import Parallaxy from '@lucien144/vue3-parallaxy';
 
+<script setup>
 const links = [
   { name: 'Articles', to: '/articles' },
   { name: 'Documentaries', to: '/videos' },
@@ -58,27 +27,26 @@ const links = [
 ];
 </script>
 
+
 <style>
-/* Wrapper for the entire parallax content */
-.parallax-wrapper {
+/* Styles for the homepage */
+.homepage {
   position: relative;
-  overflow: hidden;
   height: 100vh; /* Full viewport height */
-}
-
-/* Parallax containers */
-.parallax-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  background-color: black; /* Fallback color */
   overflow: hidden;
 }
 
-.parallax-image {
+/* Static Image Container Styles */
+.image-container {
   width: 100%;
-  height: auto; /* Adjust this as needed to maintain aspect ratio */
+  height: 100%;
+  overflow: hidden;
+}
+
+.static-image {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center;
 }
@@ -86,31 +54,33 @@ const links = [
 /* Navigation menu styles */
 #nav-menu {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 20px;
+  right: 20px;
   z-index: 100;
+  font-family: "urw-form", sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 #nav-menu ul {
   list-style-type: none;
   margin: 0;
   padding: 10px;
+  /* Align menu to the right */
+  text-align: right;
 }
 
 #nav-menu li {
   display: inline;
-  margin-right: 10px;
+  margin-right: 20px; /* Increase spacing between links */
 }
 
-/* Title layer styles */
-.title-layer {
-  position: absolute;
-  z-index: 50; /* Adjust z-index as needed */
-  text-align: center;
-  font-size: 2em;
-  width: 100%;
-  top: 50%; /* Center vertically */
-  left: 50%;
-  transform: translate(-50%, -50%); /* Center horizontally */
+/* Make sure all links inside #nav-menu are styled */
+#nav-menu a {
+  color: #eaeaea; /* Sets the desired text color for the links */
+  text-decoration: none; /* Removes the underline from links */
+  font-size: 1.5rem; /* Increases the font size */
+  font-weight: 700; /* Optional: if you want to make the text bold */
+  padding: 5px 10px; /* Optional: if you want to increase the clickable area for better UX */
 }
 </style>
