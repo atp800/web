@@ -10,6 +10,7 @@
     "server": "cd .. && python manage.py runserver"
   },
   "dependencies": {
+    "@lucien144/vue3-parallaxy": "^0.1.1",
     "axios": "^1.6.5",
     "core-js": "^3.8.3",
     "dompurify": "^3.0.8",
