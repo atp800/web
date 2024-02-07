@@ -5,6 +5,11 @@
     <div class="image-container">
       <img src="/images/Homepage1.png" alt="Background" class="static-image">
     </div>
+
+    <!-- Tagline Container 
+    <div class="tagline">
+      Unveiling Nature: Wildlife Documentaries, Eco-Reviews and Science for a Sustainable Life
+    </div>-->
     
     <!-- Navigation Menu -->
     <div id="nav-menu">
@@ -22,7 +27,7 @@
 <script setup>
 const links = [
   { name: 'Articles', to: '/articles' },
-  { name: 'Documentaries', to: '/videos' },
+  { name: 'Videos', to: '/videos' },
   { name: 'About', to: '/about' },
 ];
 </script>
@@ -83,4 +88,22 @@ const links = [
   font-weight: 700; /* Optional: if you want to make the text bold */
   padding: 5px 10px; /* Optional: if you want to increase the clickable area for better UX */
 }
+
+
+/* .tagline {
+  position: absolute;
+  bottom: 23.7vh;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #eaeaea; 
+  font-family: "urw-form", sans-serif; 
+  font-size: max(calc(1rem + 1vw), 10px);
+  font-style: italic;
+  text-align: center; 
+  max-width: 100%; 
+  z-index: 10;
+  padding:0;
+  margin:0;
+
+} */
 </style>

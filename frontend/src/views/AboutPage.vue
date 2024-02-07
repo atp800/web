@@ -9,7 +9,7 @@
     </button>
 
     <video playsinline autoplay muted loop>
-      <source src="/videos/multi_animal_splatter.mov" type="video/mp4">
+      <source src="/videos/multi_animal_splatter_compressed.mov" type="video/mp4">
     </video>
     <div class="blurred-border"></div>
     <div class="overlay-image"></div>
@@ -122,7 +122,7 @@ export default {
   background: none;
   border: none;
   cursor: pointer;
-  color: #fbf7f5; /* adjust to your desired color */
+  color: #eaeaea; /* adjust to your desired color */
   z-index: 10; /* add this line */
 }
 
@@ -145,8 +145,8 @@ export default {
   width: 100%;
   text-align: center;
   z-index: 5;
-  color: #fbf7f5;
-  font-size: clamp(1.5rem, 4vw, 100px);
+  color: #eaeaea;
+  font-size: clamp(1.5rem, 3vw, 100px);
   font-family: 'Architects Daughter';
 }
 /* 
@@ -159,7 +159,7 @@ export default {
 .content {
   position: relative;
   z-index: 5;
-  color: #fbf7f5;
+  color: #eaeaea;
   text-align: center;
   font-size: clamp(0.2rem, 3vw, 80px); 
   margin-top: -2em; 
@@ -183,7 +183,7 @@ export default {
   animation: fade-in 1s ease both;
   cursor: pointer;
   text-decoration: none;
-  color: #fbf7f5;
+  color: #eaeaea;
   margin-bottom: 4vw; /* Adds space below each link */
   font-family: 'Nanum Pen Script';
 }

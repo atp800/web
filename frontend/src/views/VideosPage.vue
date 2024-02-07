@@ -1,17 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Montserrat&display=swap');
-
 <template>
   <div class="video-background">
+    <button @click="goToHome" class="home-button">
+      <!-- SVG Icon for Home button -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2h-14a2 2 0 0 1-2-2z"></path>
+        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+      </svg>
+    </button>
+
     <video playsinline autoplay muted loop>
-      <source src="/videos/multi_animal_splatter.mov" type="video/mp4">
+      <source src="/videos/multi_animal_splatter_compressed.mov" type="video/mp4">
     </video>
     <div class="blurred-border"></div>
     <div class="overlay-image"></div>
     <header class="header">
-      <h1>WildEye</h1>
+      <h1>Videos</h1>
     </header>
     <div class="content">
+      <p>We haven't uploaded any videos yet, <br>but we've got a few things coming up so<br> check back soon!</p>
+
       <transition-group name="fade" tag="div" class="links-container">
         <router-link 
           v-for="(link, index) in links" 
@@ -30,25 +37,20 @@
 <script>
 export default {
   name: 'VideosPage',
-
-  data() {
-    return {
-      links: [
-        { name: 'Home', to: '/' },
-        { name: 'Posts and Reviews', to: '/articles' },
-        { name: 'About', to: '/about' },
-        // { name: 'Science', to: '/science' },
-        // { name: 'Philosophy', to: '/philosophy' },
-        // { name: 'Settings', to: '/settings' },
-      ],
-    };
-  },
+  methods: {
+    goToHome() {
+      this.$router.push('/');
+    }
+  }
 };
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat:wght@500&family=Montserrat&display=swap');
+
 
 .video-background {
+  padding-top: 9em; 
   position: relative;
   width: 100%;
   height: 100%;
@@ -61,6 +63,7 @@ export default {
 }
 
 .video-background video {
+  padding-top: 5em; 
   position: absolute;
   z-index: 1;
   width: 85%; /* adjust to desired size */
@@ -106,22 +109,44 @@ export default {
 }
 
 
+.home-button {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fbf7f5; /* adjust to your desired color */
+  z-index: 10; /* add this line */
+}
+
+.home-button svg {
+  width: 2rem;  /* adjust size as needed */
+  height: 2rem;
+  opacity: 1;    /* Set original opacity */
+  transition: opacity 0.15s ease-in-out; /* Smooth transition */
+}
+
+.home-button:hover svg {
+  opacity: 0.5;    /* Adjust to desired opacity during hover */
+}
+
 
 
 .header {
   position: absolute;
-  margin-bottom: 50vw;
+  margin-bottom: 53vw;
   width: 100%;
   text-align: center;
   z-index: 5;
   color: #fbf7f5;
-  font-size: clamp(1.5rem, 4vw, 100px);
+  font-size: clamp(1.5rem, 3vw, 100px);
   font-family: 'Architects Daughter';
 }
-
-/* @media (min-width: 1200px) { 
+/* 
+@media (min-width: 1200px) { 
   .header {
-    font-size: 48px; 
+    font-size: 48px;
   }
 } */
 
@@ -130,8 +155,8 @@ export default {
   z-index: 5;
   color: #fbf7f5;
   text-align: center;
-  font-size: clamp(1.5rem, 5.5vw, 80px); 
-  margin-top: 2em;  /* Responsive top-margin */
+  font-size: clamp(0.2rem, 3vw, 80px); 
+  margin-top: -2em; 
   min-height: 900px;
   font-family: 'Nanum Pen Script';
   display: flex;
@@ -160,7 +185,7 @@ export default {
 @keyframes fade-in {
   0% {
     opacity: 0;
-    transform: translateY(-20px); /*positive 20 looks cool too*/
+    transform: translateY(20px); /*positive 20 looks cool too*/
   }
   100% {
     opacity: 1;

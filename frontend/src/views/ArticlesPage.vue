@@ -102,7 +102,7 @@ export default {
   background: none;
   border: none;
   cursor: pointer;
-  color: #fbf7f5; /* adjust to your desired color */
+  color: #eaeaea; /* adjust to your desired color */
 }
 
 .home-button svg {
@@ -118,7 +118,7 @@ export default {
 
 h1 {
   font-family: 'Architects Daughter';
-  color: #fbf7f5;
+  color: #eaeaea;
   font-size: clamp(1.5rem, 7vw, 100px);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), 0 0 0.4em rgba(211, 211, 211, 0.2), 0 0 0.1em rgba(211, 211, 211, 0.2); /* Added for faux inner shadow */
   
@@ -172,7 +172,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #fbf7f5;
+  color: #eaeaea;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5), 0 0 0.4em rgba(211, 211, 211, 0.2), 0 0 0.1em rgba(211, 211, 211, 0.2); /* Added for faux inner shadow */
   font-family: 'Nanum Pen Script';
   font-size: clamp(1vw, 3.2vw, 150px);
