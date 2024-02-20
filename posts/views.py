@@ -25,22 +25,22 @@ def post_detail(request, slug):
     return JsonResponse(post_data)
 
 
-def blog_posts(request):
-    # Fetch blog posts and render them using blog template
-    pass
+# def blog_posts(request):
+#     # Fetch blog posts and render them using blog template
+#     pass
 
-def philosophy_posts(request):
-    # Fetch philosophy posts and render them using philosophy template
-    pass
+# def philosophy_posts(request):
+#     # Fetch philosophy posts and render them using philosophy template
+#     pass
 
-def reviews_posts(request):
-    # Fetch reviews posts and render them using reviews template
-    pass
+# def reviews_posts(request):
+#     # Fetch reviews posts and render them using reviews template
+#     pass
 
-def science_posts(request):
-    # Fetch science posts and render them using science template
-    pass
+# def science_posts(request):
+#     # Fetch science posts and render them using science template
+#     pass
 
-def wildlife_posts(request):
-    # Fetch wildlife posts and render them using wildlife template
-    pass
+# def wildlife_posts(request):
+#     # Fetch wildlife posts and render them using wildlife template
+#     pass
